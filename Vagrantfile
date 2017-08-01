@@ -72,5 +72,10 @@ Vagrant.configure("2") do |config|
     wget https://github.com/kubernetes/kops/releases/download/1.6.1/kops-linux-amd64
     chmod +x kops-linux-amd64
     mv kops-linux-amd64 /usr/local/bin/kops
+
+    echo ##### Installing Pip & AWS #####
+    apt install python-pip -y
+    pip install --upgrade pip
+    pip install awscli
   SHELL
 end
