@@ -16,10 +16,42 @@ Kubernetes Operations (kops) practice on linux env using Vagrant and Docker for 
   - [Vagrant](#vagrant)
 
 # Docker
+## How to run
+1. Build docker image && run container.
+```
+  $ docker build -t shawnkoon/kops:1.00 .
+  ...
 
+  $ docker run --name shawnkoon-kops-container -it shawnkoon/kops:1.00 /bin/bash
+  ...
+
+  shawnkoon@<hash>:~/kub$ ls
+  ...
+```
+
+2. Start using kops
+```
+  shawnkoon@<hash>:/kub$ kops --help
+```
+
+## Clean up
+1. Exit out of Docker container.
+```
+  shawnkoon@<hash>:/kub$ exit
+```
+
+2. Remove container.
+```
+  $ docker rm shawnkoon-kops-container
+```
+
+3. Remove Image.
+```
+  $ docker rmi shawnkoon/kops:1.00
+```
 
 # Vagrant
-## How to run.
+## How to run
 1. Run vagrant.
 ```
   $ vagrant up
@@ -42,7 +74,6 @@ Kubernetes Operations (kops) practice on linux env using Vagrant and Docker for 
 ```
   ubuntu@ubuntu-xenial:/vagrant$ kops --help
 ```
-
 
 ## Clean up
 1. Exit out of Vagrant box.

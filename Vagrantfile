@@ -66,7 +66,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
 
     echo ##### Installing update #####
-    apt-get update
+    apt update
 
     echo ##### Installing kops #####
     wget https://github.com/kubernetes/kops/releases/download/1.6.1/kops-linux-amd64
