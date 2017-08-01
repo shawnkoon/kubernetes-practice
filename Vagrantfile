@@ -73,6 +73,11 @@ Vagrant.configure("2") do |config|
     chmod +x kops-linux-amd64
     mv kops-linux-amd64 /usr/local/bin/kops
 
+    echo ##### Installing kubectl #####
+    wget -O kubectl https://storage.googleapis.com/kubernetes-release/release/v1.7.0/bin/linux/amd64/kubectl && \
+    chmod +x kubectl && \
+    mv kubectl /usr/local/bin/kubectl
+
     echo ##### Installing Pip & AWS #####
     apt install python-pip -y
     pip install --upgrade pip
